@@ -142,8 +142,8 @@ if 'mtluntan' in os.environ and 'ips' in os.environ:
     if not ips:
         print('github ips变量未设置')
         exit(1)
-    if not mtlunt:
-        print('github mtlunt变量未设置')
+    if not mtluntan:
+        print('github mtluntan变量未设置')
         exit(1)
     for duo in mtluntan.split(","):
         if ':' not in duo:
