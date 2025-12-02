@@ -18,11 +18,9 @@
 例如:  
   >127.0.0.1:80  
 127.0.0.1:81  
-127.0.0.1:82  
+127.0.0.1:82
 
-4. 在 GitHub 仓库的 Settings → Actions → General 设置 Workflow permissions > 选Read and write permissions和Allow GitHub Actions to create and approve pull requests
-
-5. GitHub Actions 初始手动执行检查是否有配置错误，脚本会自动每天执行,可手动执行
+4. GitHub Actions 初始手动执行检查是否有配置错误，脚本会自动每天执行,可手动执行
 
 ### 注意事项
 1. 确保账户密码正确
