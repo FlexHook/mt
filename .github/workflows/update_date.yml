@@ -3,7 +3,7 @@ name: Update Last Update Date
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   update-date:
