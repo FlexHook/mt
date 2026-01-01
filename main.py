@@ -17,16 +17,6 @@ Retry = {}
 accounts_list = {}
 s_list = {}
 prefs.put("theme", "dark")
-os.system('git config --local user.name "github-actions[bot]"')
-os.system('git config --local user.email "github-actions[bot]@users.noreply.github.com"')
-os.system('git add -A')
-commit_result = os.system('git commit -m "更新"')
-if commit_result == 0:
-    print("✅ 提交成功")
-    os.system('git push --quiet --force-with-lease')
-    print("✅ 推送成功")
-else:
-    print("⚠️  无更改可提交或提交失败")
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36',
