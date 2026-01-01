@@ -96,6 +96,14 @@ except Exception as e:
         try:
             os.remove(pathName)
             print(f"已删除损坏的数据库文件: {pathName}")
+            try:
+                os.system(f'git add -A >/dev/null 2>&1')
+                os.system('git config --local user.name "github-actions[bot]" >/dev/null 2>&1')
+                os.system('git config --local user.email "github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1')
+                os.system('git commit -m "删除数据库文件" >/dev/null 2>&1')
+                os.system('git push --quiet --force-with-lease')
+            except Exception as e:
+                print(f"Git操作失败: {e}")
         except Exception as remove_error:
             print(f"删除损坏的数据库文件文件失败: {remove_error}")
     prefs = Preferences()
