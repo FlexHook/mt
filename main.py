@@ -52,7 +52,7 @@ def lo():
                 IP_LIST.add(ip)
     except Exception as e:
         pass
-    with ThreadPoolExecutor(max_workers=10) as executor:
+    with ThreadPoolExecutor(max_workers=30) as executor:
         futures = [executor.submit(verify, proxy) for proxy in IP_LIST]
         for future in as_completed(futures):
             proxy, is_valid, requestTime = future.result()
