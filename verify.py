@@ -36,7 +36,7 @@ def save():
         os.system('git config --local user.name "github-actions[bot]" >/dev/null 2>&1')
         os.system('git config --local user.email "github-actions[bot]@users.noreply.github.com" >/dev/null 2>&1')
         # os.system('git config pull.rebase true >/dev/null 2>&1')
-        os.system(f'git add {fileName} {fileName2} >/dev/null 2>&1'):
+        os.system(f'git add {fileName} {fileName2} >/dev/null 2>&1')
         os.system('git commit -m "更新" >/dev/null 2>&1')
         os.system('git push --quiet --force-with-lease')
     except Exception as e:
