@@ -26,9 +26,8 @@ class Preferences:
     def _init_or_recreate_db(self):
         db_path = self._db_path
         try:
-            toDB = SqliteDict(db_path, autocommit=True)
-            if toDB:
-                self.db = toDB
+            os.makedirs(os.path.dirname(db_path), exist_ok=True)
+            self.db = SqliteDict(db_path, autocommit=True)
         except:
             try:
                 if os.path.exists(db_path):
@@ -37,9 +36,8 @@ class Preferences:
             except:
                 pass
             try:
-                toDB = SqliteDict(db_path, autocommit=True)
-                if toDB:
-                    self.db = toDB
+                os.makedirs(os.path.dirname(db_path), exist_ok=True)
+                self.db = SqliteDict(db_path, autocommit=True)
             except:
                 raise
         key = f"{self.getTimes()}_{random.uniform(0, 100)}"
