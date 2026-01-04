@@ -31,7 +31,7 @@ class Preferences:
         try:
             os.makedirs(os.path.dirname(db_path), exist_ok=True)
             self.db = SqliteDict(db_path, autocommit=True)
-        except Exception as e:
+        except:
             try:
                 if hasattr(self, 'db'):
                     self.db.close()
@@ -40,18 +40,18 @@ class Preferences:
             try:
                 if os.path.exists(db_path):
                     os.remove(db_path)
-            except Exception as remove_error:
+            except:
                 pass
             try:
                 os.makedirs(os.path.dirname(db_path), exist_ok=True)
                 self.db = SqliteDict(db_path, autocommit=True)
-            except Exception as recreate_error:
+            except:
                 raise
 
     def get(self, key, default=None):
         try:
             return self.d(self.db.get(self.e(key), self.e(default)))
-        except Exception:
+        except:
             return default
 
     def put(self, key, value):
@@ -108,7 +108,8 @@ class Preferences:
                 os.system('git commit -m "更新" >/dev/null 2>&1')
                 os.system('git pull --quiet --rebase')
                 os.system('git push --quiet --force-with-lease')
-        except Exception as e:
-            print(f"Git操作失败: {e}")
+        except:
+            pass
+            
 
 prefs = Preferences()
