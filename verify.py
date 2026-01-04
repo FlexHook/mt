@@ -96,7 +96,7 @@ with ThreadPoolExecutor(max_workers=20) as executor:
             successful_proxies.append((proxy, requestTime))
             nVerify.discard(proxy)
 successful_proxies.sort(key=lambda x: x[1])
-print()
+print("\n可用IP代理:")
 for proxy, req_time in successful_proxies:
     print(f"{proxy} - {req_time}ms")
     ips.add(proxy)
