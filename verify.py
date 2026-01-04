@@ -91,7 +91,8 @@ with ThreadPoolExecutor(max_workers=20) as executor:
     futures = {executor.submit(verify, proxy): i for i, proxy in enumerate(nVerify)}
     for idx, future in enumerate(as_completed(futures), 1):
         proxy, is_valid, requestTime = future.result()
-        print(f"{idx}: {"✔" if is_valid else "✖"} {proxy} - {requestTime}ms")
+        #print(f"{idx}: {"✔" if is_valid else "✖"} {proxy} - {requestTime}ms")
+        print(f"{idx}: {'\u2714' if is_valid else '\u2716'} {proxy} - {requestTime}ms")
         if is_valid:
             successful_proxies.append((proxy, requestTime))
             nVerify.discard(proxy)
