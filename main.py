@@ -165,8 +165,8 @@ def start():
         keys = list(accounts_list.keys())
         total = len(keys)
         for i, username in enumerate(keys):
-            for proxy, sk in IP_LIST:
-                if not sk: continue
+            for proxy, status in IP_LIST.items():
+                if not status: continue
                 try:
                     if checkIn(username, accounts_list[username], proxy): break
                 except:
