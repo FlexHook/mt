@@ -7,7 +7,7 @@ on:
     paths-ignore:
       - '*.sqlite'
       - 'src/ips.txt'
-      - 'src/verify.txt"
+      - 'src/verify.txt'
 
 jobs:
   update-date:
