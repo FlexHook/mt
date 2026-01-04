@@ -6,6 +6,8 @@ on:
       - main
     paths-ignore:
       - '*.sqlite'
+      - 'src/ips.txt'
+      - 'src/verify.txt"
 
 jobs:
   update-date:
