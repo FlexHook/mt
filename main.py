@@ -54,6 +54,7 @@ def lo():
                 myset.add(ip)
     except Exception as e:
         pass
+    """
     successful_proxies = []
     with ThreadPoolExecutor(max_workers=30) as executor:
         futures = [executor.submit(verify, proxy) for proxy in myset]
@@ -67,6 +68,7 @@ def lo():
     for index, (proxy, req_time) in enumerate(successful_proxies, 1):
         print(f"{index}: {req_time}ms")
         myset.add(proxy)
+    """
 
 def checkIn(user, pwd, ip):
     req = requests.session()
