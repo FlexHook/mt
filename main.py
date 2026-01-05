@@ -171,3 +171,4 @@ def start():
             if i < total - 1:
                 time.sleep(3)
 start()
+prefs.save()
