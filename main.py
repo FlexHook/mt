@@ -123,7 +123,7 @@ def checkIn(user, pwd, ip):
             if resp.ok:
                 if '失败' in resp.text:
                     del accounts_list[user]
-                    logger.warning(f"{user}: 密码错误")
+                    logger.warning(f"{format_username(user)}: 密码错误")
                     hasE = True
                     return
                 url = 'https://bbs.binmt.cc/k_misign-sign.html'
